@@ -1,0 +1,9 @@
+
+
+<view class="footer footer_default">
+  <view class="footer__inner">
+    <view class="footer__item">
+      <icon class="iconfont icon-search" bindtap="chooseLocation"></icon>
+    </view>
+  </view>
+</view>

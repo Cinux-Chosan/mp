@@ -1,5 +1,14 @@
 <!--index.wxml-->
-<view class="map-container">
-   <!-- <icon bindtap="qiehuan" class="iconfont icon-qiehuan"></icon>  -->
-  <map name="" scale="15" latitude="{{location.latitude}}" show-location longitude="{{location.longitude}}" class="wx-map wx-map_full"  controls="{{controls}}" bindcontroltap="ct"></map>
+<import src="/assets/wxmls/header.wxml"></import>
+
+<!-- <template is="header"></template> -->
+
+<view class="page-content">
+  <view class="map-container">
+     <!-- <icon bindtap="qiehuan" class="iconfont icon-qiehuan"></icon>   -->
+    <map name="" scale="15" latitude="{{location.latitude}}" show-location longitude="{{location.longitude}}" class="wx-map wx-map_full" controls="{{controls}}" bindcontroltap="ct"></map>
+  </view>
 </view>
+
+
+<include src="/assets/wxmls/footer.wxml"></include>
