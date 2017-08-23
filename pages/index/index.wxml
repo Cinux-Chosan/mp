@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class="map-container">
+   <!-- <icon bindtap="qiehuan" class="iconfont icon-qiehuan"></icon>  -->
+  <map name="" scale="15" latitude="{{location.latitude}}" show-location longitude="{{location.longitude}}" class="wx-map wx-map_full"  controls="{{controls}}" bindcontroltap="ct"></map>
+</view>

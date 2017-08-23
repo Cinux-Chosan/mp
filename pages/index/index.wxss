@@ -1,0 +1,10 @@
+/**index.wxss**/
+.map-container{
+  width: 100%;
+  height: 100%;
+}
+
+.wx-map.wx-map_full{
+  width: 100%;
+  height: 100%;
+}
