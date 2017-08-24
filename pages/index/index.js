@@ -1,6 +1,16 @@
 //index.js
 //获取应用实例
 let { getLocation } =  require('../../utils/location');
+let markers = [{
+  id: 1,
+  latitude: 23.099994,
+  longitude: 113.324520,
+  width: 30,
+  height: 30,
+  anchor: { x: .5, y: .5 },
+  iconPath: '/assets/imgs/index/car.png'
+}];
+
 
 var app = getApp()
 Page({
@@ -8,17 +18,7 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     location: {},
-    markers: [
-      {
-        id: 1,
-        latitude: 23.099994,
-        longitude: 113.324520,
-        width: 30,
-        height: 30,
-        anchor: {x: .5, y: .5},
-        iconPath: '/assets/imgs/index/car.png'
-      }
-    ],
+    markers,
     controls: [
       // {
       // id: 1,
@@ -58,11 +58,12 @@ Page({
   },
 
   resetMarker() {
-    getLocation().then(location => {
+    getLocation().then(loc => {
+      let carMarker = markers[0];    
+      carMarker.latitude = loc.latitude;
+      carMarker.longitude = loc.longitude
       this.setData({
-        location,
-        'markers[0].latitude': location.latitude + 1,
-        'markers[0].longitude': location.longitude + 1
+        markers: [carMarker]
       });
     });
   },
