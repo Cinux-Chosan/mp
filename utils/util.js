@@ -1,4 +1,4 @@
-let Promise = require('./bluebird/bluebird.min');
+let Promise = require('../assets/js/bluebird/bluebird.min');
 
 function promisify(fn) {
   return function (obj = {}) {

@@ -8,17 +8,30 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     location: {},
-    controls: [{
-      id: 1,
-      position: {
-        left: 90,
-        top: 10,
+    markers: [
+      {
+        id: 1,
+        latitude: 23.099994,
+        longitude: 113.324520,
         width: 30,
-        height: 30
-      },
-      clickable: true,
-      iconPath: '/assets/imgs/index/qiehuan.png'
-    }]
+        height: 30,
+        anchor: {x: .5, y: .5},
+        iconPath: '/assets/imgs/index/car.png'
+      }
+    ],
+    controls: [
+      // {
+      // id: 1,
+      // position: {
+      //   left: 90,
+      //   top: 10,
+      //   width: 30,
+      //   height: 30
+      // },
+      // clickable: true,
+      // iconPath: '/assets/imgs/index/qiehuan.png'
+      // }
+    ]
   },
 
   ct() {
@@ -36,6 +49,24 @@ Page({
     wx.chooseLocation({});
   },
 
+  resetMapCenter() {
+    getLocation().then(location => {
+      this.setData({
+        location
+       });
+    });
+  },
+
+  resetMarker() {
+    getLocation().then(location => {
+      this.setData({
+        location,
+        'markers[0].latitude': location.latitude + 1,
+        'markers[0].longitude': location.longitude + 1
+      });
+    });
+  },
+
   qiehuan() {
     // wx.openLocation({
     //   latitude: 111,
@@ -44,8 +75,11 @@ Page({
   },
   onLoad: function () {
     getLocation().then(location => {
-      this.setData({location});
-
+      this.setData({
+        location,
+        'markers[0].latitude': location.latitude,
+        'markers[0].longitude': location.longitude
+      });
     });
 
     var that = this
