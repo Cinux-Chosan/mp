@@ -8,11 +8,18 @@ header {
 }
 
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  /* position: fixed; */
+  /* left: 0; */
+  /* bottom: 0; */
   width: 100%;
-  height: 44px;
+  min-height: 44px;
+  /* height: 44px;  */
+}
+
+.footer.open{
+  height: 100px;
+  padding: 0 8px;
+  display: flex;
 }
 
 .footer__inner {
@@ -23,6 +30,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #fff;  
 }
 
 .footer__item{
@@ -33,4 +41,37 @@ header {
 
 .footer__item icon{
   line-height: 44px;
+}
+
+
+.footer__popup{
+  margin-bottom: 10px;
+  transition: all .2s ease-in;
+  height: 0px;
+  display: none;
+}
+
+/* .footer__popup.open{
+  height: 100px;
+  padding: 0 8px;
+  display: flex;
+} */
+.footer.open .footer__popup{
+  height: 100px;
+  padding: 0 8px;
+  display: flex;
+} 
+
+.footer__popup__inner{
+  background-color: #fff;
+  flex: 1;
+  border-radius: 5px;
+}
+
+.flex1{
+  flex: 1;
+}
+
+.h200{
+  height: 200px;
 }

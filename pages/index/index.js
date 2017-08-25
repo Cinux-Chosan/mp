@@ -1,24 +1,26 @@
 //index.js
 //获取应用实例
 let { getLocation } =  require('../../utils/location');
-let markers = [{
-  id: 1,
-  latitude: 23.099994,
-  longitude: 113.324520,
-  width: 30,
-  height: 30,
-  anchor: { x: .5, y: .5 },
-  iconPath: '/assets/imgs/index/car.png'
-}];
-
 
 var app = getApp()
+let footer = app.globalData.footer;
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
     location: {},
-    markers,
+    footer,
+    markers: [
+      {
+        id: 1,
+        latitude: 23.099994,
+        longitude: 113.324520,
+        width: 30,
+        height: 30,
+        anchor: {x: .5, y: .5},
+        iconPath: '/assets/imgs/index/car.png'
+      }
+    ],
     controls: [
       // {
       // id: 1,
@@ -57,14 +59,12 @@ Page({
     });
   },
 
-  resetMarker() {
-    getLocation().then(loc => {
-      let carMarker = markers[0];    
-      carMarker.latitude = loc.latitude;
-      carMarker.longitude = loc.longitude
-      this.setData({
-        markers: [carMarker]
-      });
+  openPopup(e) {
+    let footer = this.data.footer;
+    console.log(this.data);
+    footer.isOpen = !footer.isOpen;
+    this.setData({
+      footer
     });
   },
 
@@ -75,6 +75,7 @@ Page({
     // });
   },
   onLoad: function () {
+    
     getLocation().then(location => {
       this.setData({
         location,
@@ -82,6 +83,8 @@ Page({
         'markers[0].longitude': location.longitude
       });
     });
+
+    console.log(this.data.footer);
 
     var that = this
     //调用应用实例的方法获取全局数据

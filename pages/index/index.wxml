@@ -3,6 +3,8 @@
 <!-- <import src="/assets/wxmls/header.wxml"></import> -->
 <!-- <template is="header"></template> -->
 
+<import src="/assets/wxmls/footer.wxml"></import>
+
 <view class="page-content">
   <view class="map-container">
      <!-- <icon bindtap="qiehuan" class="iconfont icon-qiehuan"></icon>   -->
@@ -11,4 +13,5 @@
 </view>
 
 
-<include src="/assets/wxmls/footer.wxml"></include>
+<!-- <include src="/assets/wxmls/footer.wxml"></include> -->
+<template is="footer" data="{{...footer}}"></template>

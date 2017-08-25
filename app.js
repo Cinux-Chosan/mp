@@ -24,6 +24,9 @@ App({
   },
 
   globalData: {
-    userInfo: null
+    userInfo: null,
+    footer: {
+      isOpen: false
+    }
   }
 })

@@ -1,6 +1,10 @@
-
-
-<view class="footer footer_default">
+<template name="footer">
+<view class="footer footer_default {{isOpen? 'h200':''}}">
+  <view class="footer__popup">
+  <view class="footer__popup__inner">
+  </view>
+    
+  </view>
   <view class="footer__inner">
     <view class="footer__item" bindtap="chooseLocation">
       <icon class="iconfont icon-search"></icon>
@@ -8,11 +12,12 @@
     <view class="footer__item" bindtap="resetMapCenter">
       <icon class="iconfont icon-dingwei"></icon>
     </view>
-    <view class="footer__item" bindtap="resetMarker">
-      <icon class="iconfont icon-search"></icon>
-    </view>
-    <view class="footer__item" bindtap="chooseLocation">
+        <view class="footer__item" bindtap="chooseLocation">
       <icon class="iconfont icon-exchange fb"></icon>
+    </view>
+    <view class="footer__item" bindtap="openPopup">
+      <icon class="iconfont icon-up"></icon>
     </view>
   </view>
 </view>
+</template>
