@@ -1,0 +1,57 @@
+/* pages/carlist/carlist.wxss */
+
+.page-content {
+  background-color: #eee;
+}
+
+.tab__box {
+  height: 44px;
+  display: flex;
+  background-color: #fff;
+}
+
+.tab {
+  background-color: #eee;
+}
+
+.tab.active {
+  background: #f8f8f8;
+}
+
+.tab.active .tab__button {
+  background-color: #eee;
+}
+
+.tab:first-child .tab__button {
+  border-bottom-right-radius: 22px;
+  border-top-right-radius: 0;
+}
+
+.tab:last-child .tab__button {
+  border-bottom-left-radius: 22px;
+  border-top-left-radius: 0;
+}
+
+.tab:first-child.active .tab__button {
+  border-top-right-radius: 22px;
+  border-bottom-right-radius: 0;
+}
+
+.tab:last-child.active .tab__button {
+  border-top-left-radius: 22px;
+  border-bottom-left-radius: 0;
+}
+
+.tab, .tab__button {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: unset;
+  transition: all .2s ease;
+}
+
+.tab__button::after {
+  content: none;
+}

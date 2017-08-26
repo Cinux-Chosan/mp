@@ -1,0 +1,20 @@
+<!--pages/carlist/carlist.wxml-->
+<import src="/assets/wxmls/footer"></import>
+
+
+<view class="page">
+  <view class="page-content {{footer.isOpen ? 'h200' : ''}}">
+    <view class="tab__box">
+      <!-- <view class="tab">乘客</view> -->
+      <view class="tab {{tab == 1 ? 'active' : ''}}">
+        <button class="tab__button" data-tab="1" bindtap="setActive" hover-class="none">乘客</button>
+      </view>
+      <view class="tab {{tab == 2 ? 'active' : ''}}">
+        <button class="tab__button" data-tab="2" bindtap="setActive" hover-class="none">司机</button>
+      </view>
+      <!-- <view class="tab">司机</view> -->
+    </view>
+
+  </view>
+  <template is="footer" data="{{...footer}}"></template>
+</view>

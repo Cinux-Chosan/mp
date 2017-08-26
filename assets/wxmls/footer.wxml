@@ -1,6 +1,6 @@
 <template name="footer">
-<view class="footer footer_default {{isOpen? 'h200':''}}">
-  <view class="footer__popup">
+<view class="footer footer_default trans-ease">
+  <view class="footer__popup  {{isOpen? 'open': ''}}">
   <view class="footer__popup__inner">
   </view>
     
@@ -12,10 +12,10 @@
     <view class="footer__item" bindtap="resetMapCenter">
       <icon class="iconfont icon-dingwei"></icon>
     </view>
-        <view class="footer__item" bindtap="chooseLocation">
+    <view class="footer__item" bindtap="exchange">
       <icon class="iconfont icon-exchange fb"></icon>
     </view>
-    <view class="footer__item" bindtap="openPopup">
+    <view class="footer__item" bindtap="toggleMenus">
       <icon class="iconfont icon-up"></icon>
     </view>
   </view>

@@ -17,6 +17,10 @@ function promisify(fn, defaultOpts = {}) {
   }
 }
 
+Array.prototype.findBy = function(valName, val) {
+  return this.find(el => el[valName] == val);
+}
+
 module.exports = {
   promisify
 }

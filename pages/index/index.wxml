@@ -5,10 +5,10 @@
 
 <import src="/assets/wxmls/footer.wxml"></import>
 
-<view class="page-content">
+<view class="page-content {{footer.isOpen ? 'h200' : ''}}">
   <view class="map-container">
-     <!-- <icon bindtap="qiehuan" class="iconfont icon-qiehuan"></icon>   -->
-    <map name="" scale="15" latitude="{{location.latitude}}" show-location longitude="{{location.longitude}}" class="wx-map wx-map_full" markers="{{markers}}"></map>
+    <!-- <icon bindtap="qiehuan" class="iconfont icon-qiehuan"></icon>   -->
+    <map id="indexMap" name="" scale="15" latitude="{{location.latitude}}" polyline="{{polyline}}" show-location longitude="{{location.longitude}}" class="wx-map wx-map_full" markers="{{markers}}"></map>
   </view>
 </view>
 
